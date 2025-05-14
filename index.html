@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="sidemenu">
+        <div class="logo">
+            <i class="ri-alipay-fill"></i>
+            <p>Pay<span>Do</span></p>
+        </div>
+            <div class="menu-items">
+                <div class="menu-items-top">
+                    <a href="#" class="active"><i class="ri-layout-masonry-line"></i>Dashbord</a>
+                    <a href="#"><i class="ri-user-line"></i>Accounts</a>
+                    <a href="#"><i class="ri-bank-card-line"></i>Cards</a>
+                    <a href="#"><i class="ri-arrow-up-down-line"></i>Transactions</a>
+                    <a href="#"><i class="ri-money-dollar-circle-line"></i>Payment</a>
+                    <a href="#"><i class="ri-file-list-line"></i>Invoicing</a>
+                    <a href="#"><i class="ri-bar-chart-2-line"></i>Repports</a>
+                </div>
+                <div class="menu-item-bottom">
+                    <a href="#"><i class="ri-account-circle-line"></i>Profile</a>
+                    <a href="#"><i class="ri-settings-2-line"></i>Settings</a>
+                </div>
+            </div>
+        </div>
+    <div class="main">
+        <div class="top-bar">
+            <h2>Dashbord</h2>
+            <div class="top-right">
+                <div class="search">
+                    <input type="text" placeholder="Search anything...">
+                </div>
+                <div class="icon-btn">
+                    <i class="ri-notification-line"></i>
+                </div>
+                <div class="btn">
+                    <i class="ri-add-line"></i> Create account
+                </div>
+            </div>
+        </div>
+        <div class="account-balance">
+            <div class="total">
+                <h1>$220,320.60</h1>
+                <p>Total balance from all accounts</p>
+            </div>
+            <div class="currencies">
+                <div class="currency">
+                    <div class="currency-type">USD</div>
+                    <h3>$46,441.00</h3>
+                </div>
+                <div class="currency">
+                    <div class="currency-type">EUR</div>
+                    <h3>$112,345.00</h3>
+                </div>
+                <div class="currency">
+                    <div class="currency-type">GBP</div>
+                    <h3>$46,441.00</h3>
+                </div>
+            </div>
+        </div>
+        <div class="main-grid">
+            <div>
+                <div class="cards">
+                    <div class="card">
+                        <div class="card-title">
+                            <p>Income</p>
+                            <i class="ri-arrow-right-up-line"></i>
+                        </div>
+                        <div class="value">$8,189.00</div>
+                        <div class="card-title">
+                            <p>84 Transactions</p>
+                            <p class="percent">+10%</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-title">
+                            <p>Income</p>
+                            <i class="ri-arrow-right-up-line"></i>
+                        </div>
+                        <div class="value">$6,117.00</div>
+                        <div class="card-title">
+                            <p>28 Transactions</p>
+                            <p class="percent">+36%</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="charts">
+                        <h3>Annuel income</h3>
+                        <canvas id="myChart"></canvas>
+
+                    <script>
+                        const ctx = document.getElementById('myChart');
+                      
+                        new Chart(ctx, {
+                          type: 'bar',
+                          data: {
+                            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov','Dec'],
+                            datasets: [{
+                              label: 'Millions',
+                              data: [12, 19, 3, 5, 23, 3, 32, 19, 3,  15, 21, 3],
+                              borderWidth: 1,
+                              backgroundColor: '#d82f5a'
+                            }]
+                          },
+                          options: {
+                            scales: {
+                              y: {
+                                beginAtZero: true
+                              }
+                            }
+                          }
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="latest-transactions">
+                <div class="card-title">
+                    <h3>Latest Transactions</h3>
+                    <i class="ri-arrow-right-up-line"></i>
+                </div>
+                <ul class="transactions">
+                    <li class="transaction">
+                        <div class="transaction-detail">
+                            <div class="type">
+                                <i class="ri-shopping-cart-line"></i>
+                            </div>
+                            <div>
+                                <p>Amazon Purchase</p>
+                                <p class="date">05 may 19:34 am</p>
+                            </div>
+                        </div>
+                        <p>$120.50</p>
+                    </li>
+                    <li class="transaction">
+                        <div class="transaction-detail">
+                            <div class="type">
+                                <i class="ri-heart-pulse-line"></i>
+                            </div>
+                            <div>
+                                <p>Health Insurance Payment</p>
+                                <p class="date">19 Apr, 11:30 am</p>
+                            </div>
+                        </div>
+                        <p>$200.00</p>
+                    </li>
+                    <li class="transaction">
+                        <div class="transaction-detail">
+                            <div class="type">
+                                <i class="ri-flight-takeoff-line"></i>
+                            </div>
+                            <div>
+                                <p>Flight Booking - Delta</p>
+                                <p class="date">20 Apr, 2:10 pm</p>
+                            </div>
+                        </div>
+                        <p>$480.00</p>
+                    </li>
+                    <li class="transaction">
+                        <div class="transaction-detail">
+                            <div class="type">
+                                <i class="ri-hotel-line"></i>
+                            </div>
+                            <div>
+                                <p>Hotel Booking</p>
+                                <p class="date">23 Apr, 3:30 pm</p>
+                            </div>
+                        </div>
+                        <p>$320.00</p>
+                    </li>
+                    <li class="transaction">
+                        <div class="transaction-detail">
+                            <div class="type">
+                                <i class="ri-movie-line"></i>
+                            </div>
+                            <div>
+                                <p>Cinema Ticket</p>
+                                <p class="date">22 Apr, 8:00 pm</p>
+                            </div>
+                        </div>
+                        <p>$12.00</p>
+                    </li>
+                    <li class="transaction">
+                        <div class="transaction-detail">
+                            <div class="type">
+                                <i class="ri-bus-line"></i>
+                            </div>
+                            <div>
+                                <p>Uber Ride</p>
+                                <p class="date">24 Apr, 7:00 pm</p>
+                            </div>
+                        </div>
+                        <p>$22.30</p>
+                    </li>
+                    <li class="transaction">
+                        <div class="transaction-detail">
+                            <div class="type">
+                                <i class="ri-team-line"></i>
+                            </div>
+                            <div>
+                                <p>Salary credit</p>
+                                <p class="date">25 Apr, 9:00 pm</p>
+                            </div>
+                        </div>
+                        <p>$2500.00</p>
+                    <li class="transaction">
+                        <div class="transaction-detail">
+                            <div class="type">
+                                <i class="ri-store-2-line"></i>
+                            </div>
+                            <div>
+                                <p>Local Grocery Store</p>
+                                <p class="date">21 Apr, 5:00 pm</p>
+                            </div>
+                        </div>
+                        <p>$2500.00</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
